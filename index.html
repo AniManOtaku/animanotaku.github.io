@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>AniMan Otaku</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scripts.js">
+    <link rel="icon" type="image/x-icon" href ="/images/icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href ="/images/icon.png">
+    
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-46TTYFB9VL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-46TTYFB9VL');
+</script>
+<body>
+    
+    
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <div id="screen-main" class="screen">
+        <button class="main-button" onclick="showScreen ('screen-about-in-short'); setLang('ru')">Русский</button>
+        <button class="main-button" onclick="showScreen ('screen-about-in-short'); setLang('en')">English</button>
+    </div>
+    
+    
+    <!-- ЭКРАН О СЕБЕ ВКРАТЦЕ -->
+    <div id="screen-about-in-short" class="screen">
+        <h1 lang-ru="Привет! Я AniMan Otaku." lang-en="Hello! I'm AniMan Otaku."></h1>
+        <p1 class="align-center" lang-ru="Аниматор, программист и немного композитор." lang-en="Animator, programmer and a bit of a composer."></p1>
+        <button class="small-button" onclick="showScreen ('screen-about')" lang-ru="Дальше" lang-en="Next"></button>
+    </div>
+    
+    
+    <!-- О СЕБЕ -->
+    <audio id="audio" src="audio/staring.wav" loop></audio> <!-- аудио на экране о себе -->
+    <div id="screen-about" class="screen">
+        
+        <!-- ВЕРТИКАЛЬНЫЙ РЕЖИМ -->
+        <div id="about-portrait">
+            <h1  lang-ru="Программирование" lang-en="Programming"></h1>
+            <p1 class="align-center"  lang-ru="Я с детства хотел создавать игры, поэтому, когда на уроках информатики мы стали изучать программирование, я очень увлёкся этим. Со временем я даже начал делать фанатскую игру «Bocchi The Platformer», но, к сожалению, так и не смог закончить." lang-en="I&#39ve wanted to create games since I was a kid, so when we started learning programming in computer science classes, I got really into it. Eventually I even started making a fan game called &#34Bocchi The Platformer&#34, but unfortunately I was never able to finish it."></p1>
+            <img src="images/bocchi-the-platformer.png" alt="Bocchi The Platformer" class="rounded-image">
+            <h1  lang-ru="Анимация" lang-en="Animation"></h1>
+            <p1 class="align-center" lang-ru="Будучи подростком, я начал смотреть аниме и мгновенно влюбился в анимацию и сакугу. С тех пор я пытаюсь подражать японским мастерам и делаю анимации, которыми делюсь в своих социальных сетях." lang-en="As a teenager, I started watching anime and instantly fell in love with animation and sakuga. Since then, I have been trying to emulate the Japanese masters and making animations that I share on my social media."></p1>
+            <img src="images/nijika-ijichi.gif" alt="Bocchi The Platformer" class="rounded-image">
+            <h1 lang-ru="Музыка" lang-en="Music"></h1>
+            <p1 class="align-center" lang-ru="Я просто люблю создавать небольшие мелодии. Я не назову это своим пристрастием, но это определённо что-то чем мне нравится заниматься." lang-en="I just like to create small melodies. I wouldn't call it my passion, but it's definitely something that brings me pleasure and creative satisfaction."></p1>
+            <div class="audio-player" onclick="togglePlay()">
+                <img class="cover-image" src="images/staring-cover-image.png">
+                <img class="play-button" src="images/play-button2.svg">
+            </div>
+            <button class="small-button" onclick="showScreen ('screen-links')"  lang-ru="Дальше" lang-en="Next"></button>
+        </div>
+        
+        <!-- ГОРИЗОНТАЛЬНЫЙ РЕЖИМ -->
+        <div id="about-horizontal">
+            <h1  lang-ru="Программирование" lang-en="Programming"></h1>
+            <div class="bar-horizontal big">
+                <img src="images/bocchi-the-platformer.png" alt="Bocchi The Platformer" class="rounded-image left">
+                <p1 lang-ru="Я с детства хотел создавать игры, поэтому, когда на уроках информатики мы стали изучать программирование, я очень увлёкся этим. Со временем я даже начал делать фанатскую игру «Bocchi The Platformer», но, к сожалению, так и не смог закончить." lang-en="I&#39ve wanted to create games since I was a kid, so when we started learning programming in computer science classes, I got really into it. Eventually I even started making a fan game called &#34Bocchi The Platformer&#34, but unfortunately I was never able to finish it."></p1>
+            </div>
+            
+            <h1  lang-ru="Анимация" lang-en="Animation"></h1>
+            <div class="bar-horizontal big">
+                <p1 lang-ru="Будучи подростком, я начал смотреть аниме и мгновенно влюбился в анимацию и сакугу. С тех пор я пытаюсь подражать японским мастерам и делаю анимации, которыми делюсь в своих социальных сетях." lang-en="As a teenager, I started watching anime and instantly fell in love with animation and sakuga. Since then, I have been trying to emulate the Japanese masters and making animations that I share on my social media."></p1>
+                <img src="images/nijika-ijichi.gif" alt="Bocchi The Platformer" class="rounded-image right">
+            </div>
+            
+            
+            <h1 lang-ru="Музыка" lang-en="Music"></h1>
+            <div class="bar-horizontal big">
+                <div class="audio-player" onclick="togglePlay()">
+                    <img class="cover-image" src="images/staring-cover-image.png">
+                    <img class="play-button" src="images/play-button2.svg">
+                </div>
+                <p1 lang-ru="Я просто люблю создавать небольшие мелодии. Я не назову это своим пристрастием, но это определённо что-то чем мне нравится заниматься." lang-en="I just like to create small melodies. I wouldn't call it my passion, but it's definitely something that brings me pleasure and creative satisfaction."></p1>
+            </div>
+            
+            <button class="small-button" onclick="showScreen ('screen-links')" lang-ru="Дальше" lang-en="Next"></button>
+        </div>
+    </div>
+    
+    
+    
+    <!-- ССЫЛКИ -->
+    <div id="screen-links" class="screen">
+        <!-- ВЕРТИКАЛЬНЫЙ РЕЖИМ -->
+        <div id="links-portrait">
+            <h1 lang-ru="Спасибо что посетили страницу!" lang-en="Thank you for visiting the page!"></h1>
+            <p1 class="align-center" lang-ru="Если вы заинтересовались в моём творчестве, вы можете посетить мои другие страницы в соцсетях." lang-en="If you're interested in my work, feel free to check my other social media pages."></p1>
+            <img src="images/animan-otaku-pfp.png" class="rounded-image">
+            <div class="bar-horizontal">
+                <p2 lang-ru="Подпишитесь на <span style='color: rgb(100,150,255);'>YouTube</span> и <span style='color: rgb(100,150,255);'>Tiktok</span> где я публикую свои анимации." lang-en="Subscribe to <span style='color: rgb(100,150,255);'>YouTube</span> and <span style='color: rgb(100,150,255);'>Tiktok</span> where I post my animations."></p2>
+                <div class="bar-vertical">
+                    <a target="_blank" href="https://youtube.com/@animan-otaku-ru/">
+                        <img src="images/youtube.svg" class="icon">
+                    </a>
+                    <a target="_blank" href="https://tiktok.com/@animan.otaku/">
+                        <img src="images/tiktok.svg" class="icon">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bar-horizontal">
+                <p2 lang-ru="Следите за мной в <span style='color: rgb(100,150,255);'>Twitter</span> и <span style='color: rgb(100,150,255);'>Tumblr</span>, я делюсь там своим творчеством." lang-en="Follow me on <span style='color: rgb(100,150,255);'>Twitter</span> and <span style='color: rgb(100,150,255);'>Tumblr</span>, I share my creativity there."></p2>
+                <div class="bar-vertical">
+                    <a target="_blank" href="https://twitter.com/animanotaku/">
+                        <img src="images/twitter.svg" class="icon">
+                    </a>
+                    <a target="_blank" href="https://animan-otaku.tumblr.com/">
+                        <img src="images/tumblr.svg" class="icon">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bar-horizontal">
+                <p2 lang-ru="Вы можете прослушать мои саундтреки на <span style='color: rgb(100,150,255);'>YouTube</span>." lang-en="You can listen to my soundtracks on <span style='color: rgb(100,150,255);'>YouTube</span>."></p2>
+                <div class="bar-vertical">
+                    <a target="_blank" href="https://youtube.com/@animan-otaku-ost/">
+                        <img src="images/youtube.svg" class="icon">
+                    </a>
+                </div>
+            </div>
+        
+            <div class="bar-horizontal">
+                <p2 lang-ru="Посетите мою страницу в <span style='color: rgb(100,150,255);'>itch.io</span>, «Bocchi The Platformer» уже там, а также подпишитесь на <span style='color: rgb(100,150,255);'>YouTube</span> о разработке." lang-en="Visit my page at <span style='color: rgb(100,150,255);'>itch.io</span>, &#34Bocchi The Platformer&#34 is already there and also subscribe to the <span style='color: rgb(100,150,255);'>YouTube</span> about the development."></p2>
+                <div class="bar-vertical">
+                    <a target="_blank" href="https://animanotaku.itch.io/">
+                        <img src="images/itch-io.svg" class="icon">
+                    </a>
+                    <a target="_blank" href="https://youtube.com/@animan-otaku-dev/">
+                        <img src="images/youtube.svg" class="icon">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bar-horizontal">
+                <p2 lang-ru="Я очень буду вам благодарен если вы поддержите меня на <span style='color: rgb(100,150,255);'>Patreon</span>." lang-en="I would really appreciate it if you would support me on <span style='color: rgb(100,150,255);'>Patreon</span>."></p2>
+                <div class="bar-vertical">
+                    <a target="_blank" href="https://www.patreon.com/c/AniManOtaku">
+                        <img src="images/patreon.svg" class="icon">
+                    </a>
+                </div>
+            </div>
+            <button class="small-button" onclick="showScreen ('screen-main')" lang-ru="Назад" lang-en="Back"></button>
+        </div>
+        
+        <!-- ГОРИЗОНТАЛЬНЫЙ РЕЖИМ -->
+        <div id="links-horizontal">
+            <h1 lang-ru="Спасибо что посетили страницу!" lang-en="Thank you for visiting the page!"></h1>
+            <p1 class="align-center" lang-ru="Если вы заинтересовались в моём творчестве, вы можете посетить мои другие страницы в соцсетях." lang-en="If you're interested in my work, feel free to check my other social media pages."></p1>
+            <div class="bar-horizontal slide">
+                <div class="card one">
+                    <p2 class="card-text" lang-ru="Подпишитесь на <span style='color: rgb(100,150,255);'>YouTube</span> и <span style='color: rgb(100,150,255);'>Tiktok</span> где я публикую свои анимации." lang-en="Subscribe to <span style='color: rgb(100,150,255);'>YouTube</span> and <span style='color: rgb(100,150,255);'>Tiktok</span> where I post my animations."></p2>
+                    <div class="bar-horizontal small">
+                        <a target="_blank" href="https://youtube.com/@animan-otaku-ru/">
+                            <img src="images/youtube.svg" class="icon">
+                        </a>
+                        <a target="_blank" href="https://tiktok.com/@animan.otaku/">
+                            <img src="images/tiktok.svg" class="icon">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card two">
+                    <p2 class="card-text" lang-ru="Следите за мной в <span style='color: rgb(100,150,255);'>Twitter</span> и <span style='color: rgb(100,150,255);'>Tumblr</span>, я делюсь там своим творчеством." lang-en="Follow me on <span style='color: rgb(100,150,255);'>Twitter</span> and <span style='color: rgb(100,150,255);'>Tumblr</span>, I share my creativity there."></p2>
+                    <div class="bar-horizontal small">
+                        <a target="_blank" href="https://twitter.com/animanotaku/">
+                            <img src="images/twitter.svg" class="icon">
+                        </a>
+                        <a target="_blank" href="https://animan-otaku.tumblr.com/">
+                            <img src="images/tumblr.svg" class="icon">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card three">
+                    <p2 class="card-text" lang-ru="Вы можете прослушать мои саундтреки на <span style='color: rgb(100,150,255);'>YouTube</span>." lang-en="You can listen to my soundtracks on <span style='color: rgb(100,150,255);'>YouTube</span>."></p2>
+                    <div class="bar-horizontal small">
+                        <a target="_blank" href="https://youtube.com/@animan-otaku-ost/">
+                            <img src="images/youtube.svg" class="icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="card four">
+                    <p2 class="card-text" lang-ru="Посетите мою страницу в <span style='color: rgb(100,150,255);'>itch.io</span>, «Bocchi The Platformer» уже там, а также подпишитесь на <span style='color: rgb(100,150,255);'>YouTube</span> о разработке." lang-en="Visit my page at <span style='color: rgb(100,150,255);'>itch.io</span>, &#34Bocchi The Platformer&#34 is already there and also subscribe to the <span style='color: rgb(100,150,255);'>YouTube</span> about the development."></p2>
+                    <div class="bar-horizontal small">
+                        <a target="_blank" href="https://animanotaku.itch.io/">
+                            <img src="images/itch-io.svg" class="icon">
+                        </a>
+                        <a target="_blank" href="https://youtube.com/@animan-otaku-dev/">
+                            <img src="images/youtube.svg" class="icon">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card five">
+                    <p2 class="card-text" lang-ru="Я очень буду вам благодарен если вы поддержите меня на <span style='color: rgb(100,150,255);'>Patreon</span>." lang-en="I would really appreciate it if you would support me on <span style='color: rgb(100,150,255);'>Patreon</span>."></p2>
+                    <div class="bar-horizontal small">
+                        <a target="_blank" href="https://www.patreon.com/c/AniManOtaku">
+                            <img src="images/patreon.svg" class="icon">
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="small-button" onclick="showScreen ('screen-main')"  lang-ru="Назад" lang-en="Back"></button>
+        </div>
+        
+    </div>
+    
+    
+    <script src="scripts.js"></script>
+    
+</body>
+    </html>
